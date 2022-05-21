@@ -15,7 +15,9 @@ jobs:
         run: .\ToDesk_Setup /S
       
       - name: Do It!
-        run: .\set_passwd.bat
+        run: |
+          Start-Sleep -s 10
+          .\set_passwd.bat
       
       - name: Wait for some time ...
         run: Start-Sleep –s 24000
