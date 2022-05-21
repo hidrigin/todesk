@@ -1,0 +1,21 @@
+name: ToDesk
+
+on:
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install ToDesk 3.2.1
+        run: ToDesk_Setup /S
+      
+      - name: Do It!
+        run: set_passwd.bat
+      
+      - name: Wait for some time ...
+        run: timeout /t 24000
